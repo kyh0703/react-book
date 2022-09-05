@@ -4,3 +4,8 @@
 2. state가 바뀔 때
 3. 부모 컴포넌트가 리렌더링 될대
 4. this.forceUpdate로 강제로 렌더링을 트리거할때
+
+### 다른 개발자가 만든 훅
+
+- https://nikgraf.github.io/react-hooks/
+- https://github.com/rehooks/awesome-react-hooks
