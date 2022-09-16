@@ -70,21 +70,11 @@ const Category = styled(NavLink)`
   }
 `;
 
-const checkActive = (match, location) => {
-  if (!location) return false;
-  const { pathname } = location;
-  console.log(pathname);
-  return pathname === '/';
-};
 const Categories = () => {
   return (
     <CategoriesBlock>
       {categories.map((c) => (
-        <Category
-          isActive={checkActive}
-          key={c.name}
-          to={c.name === 'all' ? '/' : `/${c.name}`}
-        >
+        <Category key={c.name} to={c.name === 'all' ? '/' : `/${c.name}`} end>
           {c.text}
         </Category>
       ))}
