@@ -1,6 +1,7 @@
 import React from 'react';
 
 const Counter = ({ number, onIncrease, onDecrease }) => {
+  console.log('Counter Continaer2');
   return (
     <div>
       <h1>{number}</h1>
