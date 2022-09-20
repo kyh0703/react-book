@@ -1,12 +1,11 @@
-import './App.css';
-import CounterContainer from './containers/CounterContainer';
+import SampleContainer from './containers/SmapleContainer';
 
-function App() {
+const App = () => {
   return (
-    <div className='App'>
-      <CounterContainer />
+    <div>
+      <SampleContainer />
     </div>
   );
-}
+};
 
 export default App;
