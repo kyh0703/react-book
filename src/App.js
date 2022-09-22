@@ -1,4 +1,4 @@
-import SampleContainer from './containers/SmapleContainer';
+import SampleContainer from './containers/SampleContainer';
 
 const App = () => {
   return (
