@@ -69,9 +69,9 @@ module.exports = {
   appWebpackCache: resolveApp('node_modules/.cache'),
   appTsBuildInfoFile: resolveApp('node_modules/.cache/tsconfig.tsbuildinfo'),
   swSrc: resolveModule(resolveApp, 'src/service-worker'),
+  publicUrlOrPath,
   ssrIndexJs: resolveApp('src/index.server.js'), // 불러올 파일의 경로
   ssrBuild: resolveApp('dist'), // 웹팩으로 처리 한 뒤 결과물을 저장
-  publicUrlOrPath,
 };
 
 module.exports.moduleFileExtensions = moduleFileExtensions;
