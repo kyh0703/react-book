@@ -1,7 +1,7 @@
 import Blue from '../components/Blue';
 
 const BluePage = () => {
-  return <Blue></Blue>;
+  return <Blue />;
 };
 
 export default BluePage;
