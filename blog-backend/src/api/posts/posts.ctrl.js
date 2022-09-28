@@ -43,8 +43,25 @@ export const write = async (ctx) => {
 };
 
 export const list = async (ctx) => {
+  // query는 문자열임으로 숫자로 변환 후 없을 때 1을 기본으로 넣어줌
+  const page = parseInt(ctx.query.page || '1', 10);
+  if (page < 1) {
+    ctx.status = 400;
+    return;
+  }
+
   try {
-    const posts = await Post.find().exec();
+    // 내림 차순으로 정렬
+    const posts = await Post.find()
+      .sort({ _id: -1 })
+      .limit(10)
+      .skip((page - 1) * 10)
+      .exec();
+    // 마지막 페이를 전달
+    // 새로운 필드를 설정, Response 헤더 중 Link를 설정, 커스텀헤더를 설정하는 방법
+    // 커스텀헤더로 작업
+    const postCount = await Post.countDocuments().exec();
+    ctx.set('Last-Page', Math.ceil(postCount / 10));
     ctx.body = posts;
   } catch (e) {
     ctx.throw(500, e);
