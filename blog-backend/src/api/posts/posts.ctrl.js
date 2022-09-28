@@ -57,18 +57,17 @@ export const list = async (ctx) => {
       .limit(10)
       .skip((page - 1) * 10)
       .exec();
+
     // 마지막 페이를 전달
     // 새로운 필드를 설정, Response 헤더 중 Link를 설정, 커스텀헤더를 설정하는 방법
     // 커스텀헤더로 작업
     const postCount = await Post.countDocuments().exec();
     ctx.set('Last-Page', Math.ceil(postCount / 10));
-    ctx.body = posts
-      .map((post) => post.toJSON())
-      .map((post) => ({
-        ...post,
-        body:
-          post.body.length < 200 ? post.body : `${post.body.slice(0, 200)}...`,
-      }));
+    ctx.body = posts.map((post) => ({
+      ...post,
+      body:
+        post.body.length < 200 ? post.body : `${post.body.slice(0, 200)}...`,
+    }));
   } catch (e) {
     ctx.throw(500, e);
   }
