@@ -5,6 +5,7 @@ const bodyParser = require('koa-bodyparser');
 const mongoose = require('mongoose');
 
 const api = require('./api');
+const jwtMiddleware = require('./lib/jwtMiddleware');
 const createFakeData = require('./createFakeData');
 
 const { PORT, MONGO_URI } = process.env;
@@ -27,6 +28,7 @@ router.use('/api', api.routes());
 
 // set body parser
 app.use(bodyParser());
+app.use(jwtMiddleware);
 
 // apply router
 app.use(router.routes()).use(router.allowedMethods());
