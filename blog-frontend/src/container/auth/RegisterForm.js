@@ -3,9 +3,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { changeField, initializeForm, register } from '../../modules/auth';
 import AuthForm from '../../components/auth/AuthForm';
 import { check } from '../../modules/user';
+import { useNavigate } from 'react-router-dom';
 
 const RegisterForm = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const { form, auth, authError, user } = useSelector(({ auth, user }) => ({
     form: auth.register,
     auth: auth.auth,
@@ -60,6 +63,7 @@ const RegisterForm = () => {
     if (user) {
       console.log('check API 성공');
       console.log(user);
+      navigate('/'); // go home
     }
   }, [user]);
 
