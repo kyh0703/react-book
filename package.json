@@ -1,6 +1,8 @@
 {
   "dependencies": {
+    "axios": "^0.27.2",
     "dotenv": "^16.0.2",
-    "mongoose": "^6.6.2"
+    "mongoose": "^6.6.2",
+    "redux-saga": "^1.2.1"
   }
 }
