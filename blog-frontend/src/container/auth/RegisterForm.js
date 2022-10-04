@@ -83,6 +83,11 @@ const RegisterForm = () => {
       console.log(user);
       if (user) {
         navigate('/'); // go home
+        try {
+          localStorage.setItem('user', JSON.stringify(user));
+        } catch (e) {
+          console.log('localStorage is not working');
+        }
       }
     }
   }, [navigate, user]);
