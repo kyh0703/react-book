@@ -63,9 +63,11 @@ const RegisterForm = () => {
     if (user) {
       console.log('check API 성공');
       console.log(user);
-      navigate('/'); // go home
+      if (user) {
+        navigate('/'); // go home
+      }
     }
-  }, [user]);
+  }, [navigate, user]);
 
   return (
     <AuthForm

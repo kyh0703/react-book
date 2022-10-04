@@ -74,12 +74,12 @@ const auth = handleActions(
       ...state,
       authError: error,
     }),
-    [LOGIN_SUCCESS]: (state, { playload: auth }) => ({
+    [LOGIN_SUCCESS]: (state, { payload: auth }) => ({
       ...state,
       authError: null,
       auth,
     }),
-    [LOGIN_FAILURE]: (state, { playload: error }) => ({
+    [LOGIN_FAILURE]: (state, { payload: error }) => ({
       ...state,
       authError: error,
     }),
