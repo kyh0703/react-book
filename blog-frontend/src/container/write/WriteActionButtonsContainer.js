@@ -14,11 +14,9 @@ const WriteActionButtonsContainer = () => {
     post: write.post,
     postError: write.postError,
   }));
-  console.log(`title ${title} body ${body} ${tags}`);
 
   // register post
   const onPublish = () => {
-    console.log(title, body, tags);
     dispatch(
       writePost({
         title,
