@@ -37,8 +37,8 @@ const PostItemBlock = styled.div`
     margin-top: 2rem;
   }
 `;
-const PostItem = ({ post, user }) => {
-  const { publishedDate, tags, title, body, _id } = post;
+const PostItem = ({ post }) => {
+  const { publishedDate, user, tags, title, body, _id } = post;
   console.log(post);
   return (
     <PostItemBlock>
@@ -74,7 +74,7 @@ const PostList = ({ posts, loading, error, showWriteButton }) => {
       {!loading && posts && (
         <div>
           {posts.map((post) => (
-            <PostItem post={post} user={showWriteButton} key={post._id} />
+            <PostItem post={post} key={post._id} />
           ))}
         </div>
       )}
