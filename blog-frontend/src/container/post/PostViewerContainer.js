@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { readPost, unloadPost } from '../../modules/post';
 import PostViewer from '../../components/post/PostViewer';
 
-const PostViewerContainer = ({ match }) => {
+const PostViewerContainer = () => {
   // 처음 마운트 될 때 포스트 읽기 API 요청
   const { postId } = useParams();
   const dispatch = useDispatch();
