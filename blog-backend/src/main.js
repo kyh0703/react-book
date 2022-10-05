@@ -6,7 +6,6 @@ const mongoose = require('mongoose');
 
 const api = require('./api');
 const jwtMiddleware = require('./lib/jwtMiddleware');
-const createFakeData = require('./createFakeData');
 
 const { PORT, MONGO_URI } = process.env;
 
@@ -14,7 +13,6 @@ mongoose
   .connect(MONGO_URI)
   .then(() => {
     console.log('Connected to MongoDB');
-    createFakeData();
   })
   .catch((e) => {
     console.log(e);
