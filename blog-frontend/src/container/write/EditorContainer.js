@@ -13,8 +13,8 @@ const EditorContainer = () => {
     (payload) => dispatch(changeField(payload)),
     [dispatch],
   );
+  // 언마운트될 때 초기화
   useEffect(() => {
-    // 언마운트 될 때 초기화
     return () => {
       dispatch(initialize());
     };
